@@ -51,6 +51,7 @@ these extensions.
 >            , TypeFamilies
 >            , TypeSynonymInstances
 >            , FlexibleInstances
+>            , DeriveDataTypeable
 > #-}
 
 > {- |
@@ -77,6 +78,7 @@ these extensions.
 > import qualified Prelude
 > import Data.List (genericLength)
 > import Data.Maybe (Maybe (Just, Nothing), catMaybes)
+> import Data.Typeable (Typeable)
 > import Numeric.NumType.TF
 >   ( NumType, Zero, toNum, Add, Sub
 >   , Pos1, Pos2, pos2, Pos3, pos3
@@ -105,7 +107,7 @@ to occasionally cumbersome type classes.
 We call this data type 'Dimensional' to capture the notion that the
 units and quantities it represents have physical dimensions.
 
-> newtype Dimensional v d a = Dimensional a deriving (Eq, Ord, Enum)
+> newtype Dimensional v d a = Dimensional a deriving (Eq, Ord, Enum, Typeable)
 
 The type variable 'a' is the only non-phantom type variable and
 represents the numerical value of a quantity or the scale (w.r.t.
@@ -122,8 +124,8 @@ Since 'a' is the only non-phantom type we were able to define
 The phantom type variable v is used to distinguish between units
 and quantities. It should be one of the following:
 
-> data DUnit
-> data DQuantity
+> data DUnit deriving Typeable
+> data DQuantity deriving Typeable
 
 For convenience we define type synonyms for units and quantities.
 
@@ -164,7 +166,7 @@ dimensions that make up the given dimension. The powers are represented
 using NumTypes. For convenience we collect all seven base dimensions
 in a data type 'Dim'.
 
-> data Dim l m t i th n j
+> data Dim l m t i th n j deriving Typeable
 
 where the respective dimensions are represented by type variables
 using the following convention.
