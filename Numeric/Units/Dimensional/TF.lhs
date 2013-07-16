@@ -375,8 +375,7 @@ elements of a functor (e.g. a list).
 The sum of all elements in a list.
 
 > sum :: forall d a . Num a => [Quantity d a] -> Quantity d a
-> sum = foldr (+) (Dimensional 0 :: Quantity d a)
-> -- -}
+> sum = foldr (+) _0
 
 The length of the list as a 'Dimensionless'. This can be useful for
 purposes of e.g. calculating averages.
@@ -440,8 +439,10 @@ For convenience We define some constants for small integer values
 that often show up in formulae. We also throw in 'pi' for good
 measure.
 
-> _0, _1, _2, _3, _4, _5, _6, _7, _8, _9 :: (Num a) => Dimensionless a
-> _0 = 0 *~ one
+> _0 :: (Num a) => Quantity d a
+> _0 = Dimensional 0
+
+> _1, _2, _3, _4, _5, _6, _7, _8, _9 :: (Num a) => Dimensionless a
 > _1 = 1 *~ one
 > _2 = 2 *~ one
 > _3 = 3 *~ one
