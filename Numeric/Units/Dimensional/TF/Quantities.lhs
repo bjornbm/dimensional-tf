@@ -16,7 +16,7 @@ is defined. If there are several quantity types with the same
 dimensionality type synonyms are provided for each quantity type.
 
 > {- |
->    Copyright  : Copyright (C) 2006-2012 Bjorn Buckwalter
+>    Copyright  : Copyright (C) 2006-2013 Bjorn Buckwalter
 >    License    : BSD3
 >
 >    Maintainer : bjorn.buckwalter@gmail.com
@@ -304,6 +304,15 @@ provide some synonyms that we anticipate will be useful.
 
 > type DKinematicViscosity = Dim Pos2 Zero Neg1 Zero Zero Zero Zero
 > type KinematicViscosity  = Quantity DKinematicViscosity
+
+> type DFirstMassMoment = Dim Pos1 Pos1 Zero Zero Zero Zero Zero
+> type FirstMassMoment = Quantity DFirstMassMoment
+
+> type DMomentOfInertia = Dim Pos2 Pos1 Zero Zero Zero Zero Zero
+> type MomentOfInertia = Quantity DMomentOfInertia
+
+> type DAngularMomentum = Dim Pos2 Pos1 Neg1 Zero Zero Zero Zero
+> type AngularMomentum = Quantity DAngularMomentum
 
 For these we don't bother defining new type synonyms for dimensionalities.
 Is this rational?

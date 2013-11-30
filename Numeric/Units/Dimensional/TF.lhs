@@ -55,7 +55,7 @@ these extensions.
 > #-}
 
 > {- |
->    Copyright  : Copyright (C) 2006-2012 Bjorn Buckwalter
+>    Copyright  : Copyright (C) 2006-2013 Bjorn Buckwalter
 >    License    : BSD3
 >
 >    Maintainer : bjorn.buckwalter@gmail.com
@@ -435,9 +435,14 @@ values.
 > one :: Num a => Unit DOne a
 > one = Dimensional 1
 
-For convenience We define some constants for small integer values
-that often show up in formulae. We also throw in 'pi' for good
-measure.
+For convenience we define some constants for small integer values
+that often show up in formulae. We also throw in 'pi' and 'tau' for
+good measure.
+
+The constant for zero is polymorphic as proposed by Douglas McClean
+(http://code.google.com/p/dimensional/issues/detail?id=39) allowing
+it to express zero Length or Capacitance or Velocity etc, in addition
+to the dimensionless value zero.
 
 > _0 :: (Num a) => Quantity d a
 > _0 = Dimensional 0
@@ -453,8 +458,12 @@ measure.
 > _8 = 8 *~ one
 > _9 = 9 *~ one
 
-> pi :: (Floating a) => Dimensionless a
+For background on 'tau' see http://tauday.com/tau-manifesto (but also
+feel free to review http://www.thepimanifesto.com).
+
+> pi, tau :: (Floating a) => Dimensionless a
 > pi = Prelude.pi *~ one
+> tau = _2 * pi
 
 
 = Instances of 'Show' =
