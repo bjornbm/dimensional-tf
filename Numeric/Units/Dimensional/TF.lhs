@@ -55,7 +55,7 @@ these extensions.
 > #-}
 
 > {- |
->    Copyright  : Copyright (C) 2006-2013 Bjorn Buckwalter
+>    Copyright  : Copyright (C) 2006-2016 Bjorn Buckwalter
 >    License    : BSD3
 >
 >    Maintainer : bjorn.buckwalter@gmail.com
