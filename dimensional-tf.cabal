@@ -1,8 +1,8 @@
 Name:                dimensional-tf
-Version:             0.3.0.2
+Version:             0.3.0.3
 License:             BSD3
 License-File:        LICENSE
-Copyright:           Bjorn Buckwalter 2006-2015
+Copyright:           Bjorn Buckwalter 2006-2016
 Author:              Bjorn Buckwalter
 Maintainer:          bjorn@buckwalter.se
 Stability:           experimental
@@ -26,7 +26,7 @@ Description:
 
 Category:            Math, Physics
 Build-Type:          Simple
-Build-Depends:       base < 5, time < 1.6, numtype-tf < 1.1
+Build-Depends:       base < 5, time < 1.7, numtype-tf < 1.1
 Exposed-Modules:     Numeric.Units.Dimensional.TF,
                      Numeric.Units.Dimensional.TF.Prelude,
                      Numeric.Units.Dimensional.TF.Quantities,
