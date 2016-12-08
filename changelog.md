@@ -1,3 +1,8 @@
+0.3.0.4 (2016-12)
+-----------------
+*  Bumped time dependency upper bound.
+
+
 0.3.0.3 (2016-01)
 -----------------
 *  Bumped time dependency upper bound.
